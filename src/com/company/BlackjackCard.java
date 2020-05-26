@@ -3,9 +3,9 @@ package com.company;
 public class BlackjackCard extends Card {
     private final int scores;
 
-    public BlackjackCard(String rank, String suit, int scores) {
+    public BlackjackCard(int rank, int suit) {
         super(rank, suit);
-        this.scores = scores;
+        scores = Math.min(rank, 10);
     }
 
     public int getScores() {
