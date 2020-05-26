@@ -45,22 +45,6 @@ public class Game {
         }
     }
 
-    public int getPlayerScores() {
-        return playerScores;
-    }
-
-    public void setPlayerScores(int playerScores) {
-        this.playerScores = playerScores;
-    }
-
-    public int getDealerScores() {
-        return dealerScores;
-    }
-
-    public void setDealerScores(int dealerScores) {
-        this.dealerScores = dealerScores;
-    }
-
     @Override
     public String toString() {
         return String.format("Player: %s %d scores%nDealer: %s %d scores",
