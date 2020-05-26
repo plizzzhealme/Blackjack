@@ -82,4 +82,8 @@ public class Card {
                 return null;
         }
     }
+
+    public int getRank() {
+        return rank;
+    }
 }
