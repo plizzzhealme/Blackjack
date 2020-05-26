@@ -3,6 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
+    //if you want you can contact me via telegram https://t.me/plizzzhealme or gmail plizzz.healme@gmail.com
     private static final Scanner in = new Scanner(System.in);
     private static final Game game = new Game();
 
