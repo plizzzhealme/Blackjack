@@ -148,14 +148,6 @@ public class Blackjack {
         return points;
     }
 
-    public int getPlayerPoints() {
-        return playerPoints;
-    }
-
-    public int getDealerPoints() {
-        return dealerPoints;
-    }
-
     public boolean isRoundEnded() {
         return roundEnded;
     }
