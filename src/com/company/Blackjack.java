@@ -157,6 +157,10 @@ public class Blackjack {
             return false;
         }
 
+        if (dealerPoints > BLACKJACK) {
+            return true;
+        }
+
         return playerPoints > dealerPoints;
     }
 
