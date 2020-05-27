@@ -162,7 +162,7 @@ public class Blackjack {
 
     @Override
     public String toString() {
-        return String.format("Player: %s %d scores%nDealer: %s %d scores",
+        return String.format("Player: %s %d points%nDealer: %s %d points",
                 playerHand,
                 playerPoints,
                 dealerHand,
