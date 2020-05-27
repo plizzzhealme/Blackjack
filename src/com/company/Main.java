@@ -3,34 +3,14 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-    //if you want you can contact me via telegram https://t.me/plizzzhealme or gmail plizzz.healme@gmail.com
     private static final Scanner in = new Scanner(System.in);
-    private static final Game game = new Game();
+    private static final Blackjack game = new Blackjack();
 
     public static void main(String[] args) {
-        boolean workFlag = true;
-        int option;
-
-        while (workFlag) {
-            printMainMenu();
-            option = getInt();
-
-            switch (option) {
-                case 1:
-                    playGame();
-                    break;
-                case 2:
-                    workFlag = false;
-                    break;
-                default:
-                    System.out.println("No such option");
-                    break;
-            }
-        }
+        playGame();
     }
 
     private static void playGame() {
-        game.startNewRound();
         int option;
         boolean gameEnded = false;
 
@@ -38,14 +18,35 @@ public class Main {
             printGameMenu();
             option = getInt();
 
+            switch (option) {
+                case 1:
+                    playRound();
+                    break;
+                case 2:
+                    gameEnded = true;
+                    break;
+                default:
+                    System.out.println("No such option");
+                    break;
+            }
+        }
+    }
+
+    private static void playRound() {
+        game.deal();
+
+        while (!game.isRoundEnded()) {
+            int option;
+
+            printRoundMenu();
+            option = getInt();
 
             switch (option) {
                 case 1:
-                    game.drawCard();
+                    game.hit();
                     break;
                 case 2:
-                    game.makeDealerTurns();
-                    gameEnded = true;
+                    game.makeDealerTurn();
                     break;
                 default:
                     System.out.println("No such option");
@@ -54,18 +55,18 @@ public class Main {
 
         }
         System.out.println(game);
-    }
-
-    private static void printMainMenu() {
-        System.out.println("Pick an option");
-        System.out.println("1 - Start new game");
-        System.out.println("2 - Quit");
+        System.out.println(game.isWon() ? "You won!" : "You lost!");
     }
 
     private static void printGameMenu() {
+        System.out.println("1 - Deal");
+        System.out.println("2 - Quit");
+    }
+
+    private static void printRoundMenu() {
         System.out.println(game);
-        System.out.println("1 - One more card");
-        System.out.println("2 - Enough");
+        System.out.println("1 - Hit");
+        System.out.println("2 - Stand");
     }
 
     public static int getInt() {
