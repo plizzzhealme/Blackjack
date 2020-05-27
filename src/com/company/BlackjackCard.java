@@ -5,7 +5,18 @@ public class BlackjackCard extends Card {
         super(rank, suit);
     }
 
+    @Override
     public int getRank() {
-        return Math.min(super.getRank(), 10);
+        int rank = super.getRank();
+
+        if (rank == Card.ACE) {
+            return 11;
+        }
+
+        if (rank > Card.TEN) {
+            return 10;
+        }
+
+        return rank;
     }
 }

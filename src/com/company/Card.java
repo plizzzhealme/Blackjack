@@ -37,24 +37,15 @@ public class Card {
 
     private String rankToString() {
         switch (rank) {
-            case ACE:
-                return "A";
             case DEUCE:
-                return "2";
             case THREE:
-                return "3";
             case FOUR:
-                return "4";
             case FIVE:
-                return "5";
             case SIX:
-                return "6";
             case SEVEN:
-                return "7";
             case EIGHT:
-                return "8";
             case NINE:
-                return "9";
+                return String.valueOf(rank);
             case TEN:
                 return "T";
             case JACK:
@@ -63,6 +54,8 @@ public class Card {
                 return "Q";
             case KING:
                 return "K";
+            case ACE:
+                return "A";
             default:
                 return null;
         }

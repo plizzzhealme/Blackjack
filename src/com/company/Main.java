@@ -30,7 +30,7 @@ public class Main {
     }
 
     private static void playGame() {
-        game.startNewGame();
+        game.startNewRound();
         int option;
         boolean gameEnded = false;
 
